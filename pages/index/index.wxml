@@ -4,13 +4,13 @@
     <view class="title">
         <text>{{title}}</text>
     </view>
-    <view wx:for="{{titles}}">
+    <view wx:for="{{titles}}" class="card">
         <text>{{item}}</text>
     </view>
     <view class="topic">
         <text>{{topic}}</text>
     </view>
-    <view wx:for="{{topics}}">
+    <view wx:for="{{topics}}" class="card">
         <text>{{item}}</text>
     </view>
 </view>
