@@ -1,13 +1,14 @@
 //index.js
 //获取应用实例
 const app = getApp();
+const chs = 'chs';
 
 Page({
   data: {
-    isChs: true,
-    langBtn: "eng",
-    titles: getTitles(),
-    topics: getTopics(),
+    title: getTitles()[chs],
+    titles: getTitles()[chs],
+    topic: getTopic()[chs],
+    topics: getTopics()[chs]
   },
   //事件处理函数
   bindViewTap: function() {
@@ -27,78 +28,27 @@ Page({
   onLoad: function() {}
 });
 
-function getTopics(isEng) {
-  const introduction = getIntro();
-  return [
-    {
-      name: 'h1',
-      attrs: {
-        class: 'title',
-      },
-      children: [
-        {
-          type: "text",
-          text: isEng ? "These are the topics I like." : "我喜欢的话题"
-        }
-      ]
-    },{
-      name: 'ul',
-      attrs: {
-        class: 'list'
-      },
-      children:introduction.topic[isEng? 'eng': 'chs'].map(function(t) {
-        return {
-          name: "li",
-          children: [
-            {
-              type: "text",
-              text: t,
-            }
-          ]
-        }
-      })
-    }
-  ]
-}
-
-function getTitles(isEng) {
-  const introduction = getIntro();
-  return [
-    {
-      name: "h1",
-      attrs: {
-        class: "title"
-      },
-      children: [
-        {
-          type: "text",
-          text: !isEng ? "我是宫不上，我有很多名号。": "Hello, you can call me Kung. yeah, Kung Pao Chicken's Kung. I have a lot titles."
-        }
-      ]
-    },
-    {
-      name: "ul",
-      attrs: {
-        class: "list"
-      },
-      children: introduction.title[!isEng? "chs": "eng"].map(text => ({
-        name: "li",
-        children: [
-          {
-            type: "text",
-            text
-          }
-        ]
-      }))
-    }
-  ];
-}
-
-function enumLangBtn() {
+function getTitles() {
   return {
-    true: 'ENG',
-    false: 'CHS'
-  };
+    chs: "我是宫不上，我有很多名号。",
+    eng: "Hello, you can call me Kung. yeah, Kung Pao Chicken's Kung. I have a lot titles."
+  }
+}
+
+function getTitles() {
+  const intro = getIntro();
+  return intro.title;
+}
+
+function getTopic() {
+  return {
+    chs: "我喜欢的话题",
+    eng: "These are the topics I like."
+  }
+}
+function getTopics() {
+  const intro = getIntro();
+  return intro.topic;
 }
 
 function getIntro() {

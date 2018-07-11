@@ -1,6 +1,0 @@
-<button class="btn" type="primary" bindtap="onTap">{{langBtn}}</button>
-<image src='/images/header.jpg' mode="widthFix"></image>
-<view class="content">
-    <rich-text nodes="{{titles}}"></rich-text>
-    <rich-text nodes="{{topics}}"></rich-text>
-</view>
