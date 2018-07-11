@@ -1,0 +1,12 @@
+<button class="btn" type="primary" bindtap="onTap">{{langBtn}}</button>
+<image src='/images/header.jpg' mode="widthFix"></image>
+<view class="content">
+    <text class="title">
+        {{title}}
+    </text>
+    <text wx:for="{{titles}}">{{item}}</text>
+    <text class="topic">
+        {{topic}}
+    </text>
+    <text wx:for="{{topics}}">{{item}}</text>
+</view>
