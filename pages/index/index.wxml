@@ -1,0 +1,4 @@
+<image src='/images/header.jpg' mode="widthFix"></image>
+<view class="content">
+<rich-text nodes="{{nodes}}"></rich-text>
+</view>

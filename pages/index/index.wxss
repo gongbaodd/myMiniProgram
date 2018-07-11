@@ -1,0 +1,11 @@
+page {
+  background: #ECEFF1;
+}
+
+.content {
+  padding: 35rpx;
+}
+
+image {
+  width: 100%;
+}
