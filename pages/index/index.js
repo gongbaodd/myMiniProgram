@@ -5,7 +5,7 @@ const chs = 'chs';
 
 Page({
   data: {
-    title: getTitles()[chs],
+    title: getTitle()[chs],
     titles: getTitles()[chs],
     topic: getTopic()[chs],
     topics: getTopics()[chs]
