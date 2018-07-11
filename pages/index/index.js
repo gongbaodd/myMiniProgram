@@ -2,33 +2,56 @@
 //获取应用实例
 const app = getApp();
 const chs = 'chs';
+const eng = 'eng';
+const title = getTitle();
+const titles = getTitles();
+const topic = getTopic();
+const topics = getTopics();
+const engClass = getEngClass();
+const chsClass = getChsClass();
+const langMap = { true: 'chs', false: 'eng' };
 
 Page({
   data: {
-    title: getTitle()[chs],
-    titles: getTitles()[chs],
-    topic: getTopic()[chs],
-    topics: getTopics()[chs]
-  },
-  //事件处理函数
-  bindViewTap: function() {
-    wx.navigateTo({
-      url: "../logs/logs"
-    });
+    chs: true,
+    title: title[chs],
+    titles: titles[chs],
+    topic: topic[chs],
+    topics: topics[chs],
+    engClass: engClass[chs],
+    chsClass: chsClass[chs]
   },
   onTap: function() {
-    const langEnum = enumLangBtn();
+    const newLangState = !this.data.chs;
+    const newLang = langMap[newLangState];
     this.setData({
-      isChs: !this.isChs,
-      langBtn: langEnum[!this.isChs],
-      titles: getTitles(!this.isChs),
-      topics: getTopics(!this.isChs)
+      chs: newLangState,
+      title: title[newLang],
+      titles: titles[newLang],
+      topic: topic[newLang],
+      topics: topics[newLang],
+      engClass: engClass[newLang],
+      chsClass: chsClass[newLang]
     });
   },
   onLoad: function() {}
 });
 
-function getTitles() {
+function getEngClass() {
+  return {
+    chs: "btn-text",
+    eng: 'btn-text selected'
+  }
+}
+
+function getChsClass() {
+  return {
+    chs: "btn-text selected",
+    eng: 'btn-text'
+  }
+}
+
+function getTitle() {
   return {
     chs: "我是宫不上，我有很多名号。",
     eng: "Hello, you can call me Kung. yeah, Kung Pao Chicken's Kung. I have a lot titles."

@@ -1,16 +1,21 @@
 <button class="btn" type="primary" bindtap="onTap">{{langBtn}}</button>
 <image src='/images/header.jpg' mode="widthFix"></image>
+<view>
+<button class="button" bindtap='onTap'>
+  <text class="{{engClass}}">ENG</text>/<text class="{{chsClass}}">CHS</text>
+</button>
+</view>
 <view class="content">
     <view class="title">
-        <text>{{title}}</text>
+        <text class="title-text">{{title}}</text>
     </view>
-    <view wx:for="{{titles}}">
+    <view wx:for="{{titles}}" wx:key="{{item}}" class="card">
         <text>{{item}}</text>
     </view>
     <view class="topic">
-        <text>{{topic}}</text>
+        <text class="topic-text">{{topic}}</text>
     </view>
-    <view wx:for="{{topics}}">
+    <view wx:for="{{topics}}" wx:key="{{item}}" class="card">
         <text>{{item}}</text>
     </view>
 </view>
