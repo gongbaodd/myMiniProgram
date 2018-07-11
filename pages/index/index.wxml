@@ -2,13 +2,13 @@
 <image src='/images/header.jpg' mode="widthFix"></image>
 <view class="content">
     <view class="title">
-        {{title}}
+        <text>{{title}}</text>
     </view>
     <view wx:for="{{titles}}">
         <text>{{item}}</text>
     </view>
     <view class="topic">
-        {{topic}}
+        <text>{{topic}}</text>
     </view>
     <view wx:for="{{topics}}">
         <text>{{item}}</text>
